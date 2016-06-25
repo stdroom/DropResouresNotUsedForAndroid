@@ -10,6 +10,7 @@ Drop Resourse Not Used For Android
 python3.x不向下兼容，本脚本使用python2.x版本
 链接地址：https://docs.python.org/2/
 2. 执行脚本 
+
 - linux或者mac系统
 ./AndroidFilter.py -d 项目路径/app/src/main
 - windows系统
