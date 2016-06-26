@@ -121,6 +121,7 @@ if __name__ == '__main__':
         elif sys.argv[1]=='-d' and os.path.exists(sys.argv[2]):
             # findstr = filterstr(sys.argv[3])
             # scan_files(sys.argv[2],postfix=sys.argv[5])
+            deletefiles = []
             findstr = filterstr(layout_drawableMatch)
             scan_files(sys.argv[2],postfix='xml')
             findstr = filterstr(java_drawableMatch)
@@ -138,6 +139,7 @@ if __name__ == '__main__':
                 if findFlag == False:
                     sumFile=sumFile+1
                     size = size+os.path.getsize(listFile[i])
+                    deletefiles.append(listFile[i])
                     print listFile[i]
             print '目录中总共引用了：%d 次数资源对象' % len(findDrawable)
             print '目录中总共有：%d 个png文件' % len(listFile)
@@ -145,7 +147,7 @@ if __name__ == '__main__':
             while True:
                 a = raw_input('是否删除(Y/N): ')
                 if a == 'y' or a=='Y':
-                    deltefile(listFile)
+                    deltefile(deletefiles)
                 else:
                     print 'n'
                 break
